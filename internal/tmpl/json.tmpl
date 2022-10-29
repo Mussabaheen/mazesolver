@@ -1,0 +1,10 @@
+{
+{{range $child := .Children}}
+    "{{makeKey}}":{
+        {{range $height := $.Height}}
+                "{{makeKey}}":{
+                    "{{makeKey}}":"{{makeMonstorOrExit}}"
+                }{{if ne $height $.Length}} , {{end}} {{end}}
+        }
+{{if ne $child $.Length}} , {{end}} {{end}}
+}

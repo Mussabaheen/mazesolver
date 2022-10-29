@@ -2,6 +2,7 @@ package maze
 
 import (
 	"github.com/Mussabeheen/mazeSolver/internal/queue"
+	"github.com/Mussabeheen/mazeSolver/internal/tmpl"
 )
 
 type service struct{}
@@ -17,7 +18,6 @@ func (m *service) SolveMaze(request PostMazeDto) []string {
 }
 
 // GetMaze takes max-child as input and creates the maze
-func (m *service) GetMaze(request GetMazeDto) error {
-
-	return nil
+func (m *service) GetMaze(request GetMazeDto) (map[string]interface{}, error) {
+	return tmpl.GenerateMaze(request.MaxChildren)
 }

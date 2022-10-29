@@ -12,7 +12,7 @@ var errExitNotFound = "sorry"
 // Service provides an interface for Solving and Creating the maze
 type Service interface {
 	SolveMaze(request PostMazeDto) []string
-	GetMaze(request GetMazeDto) error
+	GetMaze(request GetMazeDto) (map[string]interface{}, error)
 }
 
 // Controller handles requests for the maze endpoints
@@ -55,5 +55,12 @@ func (m *Controller) GetMaze(w http.ResponseWriter, r *http.Request) {
 		httputil.RespondWithError(w, http.StatusBadRequest, err.Error())
 		return
 	}
-	m.Service.GetMaze(request)
+	res, err := m.Service.GetMaze(request)
+	if err != nil {
+		httputil.RespondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	httputil.RespondWithJSON(w, 200, GetMazeResponseDto{
+		Maze: res,
+	})
 }

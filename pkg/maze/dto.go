@@ -12,7 +12,7 @@ type PostMazeResponseDto struct {
 
 // GetMazeDto represents the request to generate maze
 type GetMazeDto struct {
-	MaxChildren int `json:"maxchildren" validate:"required"`
+	MaxChildren int `json:"maxchildren" validate:"required,min=1"`
 }
 
 // GetMazeResponseDto represents the response of /maze/generate endpoint

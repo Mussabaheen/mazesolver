@@ -6,7 +6,7 @@ MazeSolver can solve and generate maze.
 
 #### POST mazesolve
 
-```http
+```
   POST /maze/solve
 ```
 
@@ -16,7 +16,7 @@ MazeSolver can solve and generate maze.
 
 #### Get maze
 
-```http
+```
   GET /maze/generate
 ```
 

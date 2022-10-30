@@ -12,4 +12,9 @@ build:
 	go build -o build/ ./...
 
 clean:
+	$(info 🧹 Cleaning...)
 	rm -rf ./build/* 
+
+run:
+	$(info 💻 Running...)
+	go run main.go

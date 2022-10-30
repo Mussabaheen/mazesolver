@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "5e1458e5-5520-4327-a3d3-83b68aae6cb8",
+		"name": "MazeSolver",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12908695"
+	},
+	"item": [
+		{
+			"name": "GenerateMaze",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/maze/generate?maxchildren=3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"maze",
+						"generate"
+					],
+					"query": [
+						{
+							"key": "maxchildren",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MazeSolver",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"maze\": {\n\n\"hfQNsxO\":{\n    \"ocpjeaW\":{\n        \n            \"fJkXOHn\":{\n                \"XbxwbBm\":{\n                    \"mLpqyKs\":\"tiger\"\n                }\n            } ,  \n            \"SJdqWMC\":{\n                \"CYnIxLs\":{\n                    \"eaYNgfH\":\"DarthVader\"\n                }\n            } \n        }\n}\n ,  \n\"UQIUWiE\":{\n    \"rlacRGy\":{\n        \n            \"sDFolpr\":{\n                \"yZWHMwb\":{\n                    \"ofsLQct\":\"tiger\"\n                }\n            } ,  \n            \"ospnazd\":{\n                \"vIESyQE\":{\n                    \"sAjWByl\":\"exit\"\n                }\n            } \n        }\n}\n \n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/maze/solve",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"maze",
+						"solve"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:9000",
+			"type": "string"
+		}
+	]
+}
